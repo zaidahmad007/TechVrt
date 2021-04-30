@@ -76,10 +76,7 @@
       <label for="city">City</label>
       <input type="text" class="form-control" id="City" placeholder="Enter City" name="City">
     </div>
-    <div class="form-group">
-        <label for="District">District:</label>
-        <input type="text" class="form-control" id="District" placeholder="Enter District" name="District">
-      </div>
+    
         <div class="form-group">
             <label for="pincode">pincode:</label>
             <input type="text" class="form-control" id="pincode" placeholder="Enter pincode" name="pincode">
@@ -92,15 +89,7 @@
             <label for="college">college:</label>
             <input type="text" class="form-control" id="college" placeholder="Enter college" name="college">
           </div>
-        <div class="form-group">
-            <label for="mname">Mother Name:</label>
-            <input type="text" class="form-control" id="mothername" placeholder="Enter mothername" name="mname">
-          </div>
-        <div class="form-group">
-          <label for="fname">Father Name:</label>
-          <input type="text" class="form-control" id="fname" placeholder="Enter Father name" name="fname">
-        </div>
-
+        
           <div class="form-group">
             <label for="board">board</label>
             <input type="text" class="form-control" id="board" placeholder="Enter board" name="board">
@@ -110,7 +99,7 @@
             <input type="text" class="form-control" id="branch" placeholder="Enter branch" name="branch">
           </div>
           <div class="form-group">
-            <label for="standard">standard</label>
+            <label for="standard">Standard</label>
             <input type="text" class="form-control" id="standard" placeholder="Enter standard" name="standard">
           </div>
         <div class="checkbox">

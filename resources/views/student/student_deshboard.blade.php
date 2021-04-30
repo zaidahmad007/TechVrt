@@ -1,5 +1,7 @@
 @extends('student/layout')
 @section('page_title','Dashboard')
+
+@section('student_name','Student')
 @section('dashboard_select','active')
 @section('container')
     <!--sidebar end-->
@@ -11,7 +13,7 @@
           <div class="col-lg-9 main-chart">
             <!--CUSTOM CHART START -->
             <div class="border-head">
-              <h3>USER VISITS</h3>
+              <h3>Students Stats</h3>
             </div>
             <div class="custom-bar-chart">
               <ul class="y-axis">

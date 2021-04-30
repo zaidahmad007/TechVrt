@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\TeacherDetail;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
@@ -18,6 +20,7 @@ class TeacherController extends Controller
     //teacherdetail
     public function teacherdetail(Request $req)
     {
+        $user=Auth::user();
         $teacher=new TeacherDetail();
         $teacher->state=$req->state;
         $teacher->city=$req->City;
@@ -27,6 +30,6 @@ class TeacherController extends Controller
         $teacher->experience=$req->Experience;
         $teacher->board=$req->board;
         $teacher->save();
-        return redirect()->back();
+        return redirect('teacherdeshboad');
     }
 }

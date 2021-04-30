@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     //
@@ -33,7 +34,8 @@ class LoginController extends Controller
         }
         elseif($userget->type=="student")
         {
-            return redirect('studentdeshboard');
+            
+            return redirect('studentdeshboard',compact($user));
         }
         else{
             return redirect('admin');
@@ -57,10 +59,13 @@ class LoginController extends Controller
                 Auth::login($user,true);
                 if($user->type=="teacher")
                 {
+
+                    
                     return redirect('teacherdeshboard');
                 }
                 elseif($user->type=="student")
-                {
+                {   
+                   // $users = DB::table('users')->get();
                     return redirect('studentdeshboard');
                 }
                 else{
@@ -74,6 +79,7 @@ class LoginController extends Controller
         }
         else{
             return redirect()->back()->with('msg','Please Register First');
+            
         }
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimetablesTable extends Migration
+class CreateSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateTimetablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('timetables', function (Blueprint $table) {
-            $table->id();
+        Schema::create('subjects', function (Blueprint $table) {
+           $table->id();
             $table->string('subject_name');
             $table->string('branch');
+            $table->string('Standard');
             $table->string('subject_code');
-            $table->string('subject_teacher');
-            $table->string('class_url');
+            $table->string('subject_notes');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateTimetablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timetables');
+        Schema::dropIfExists('subjects');
     }
 }

@@ -244,9 +244,10 @@
     <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
+
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="student/img/icon.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Student</h5>
+          <p class="centered"><a href="{{url('profile')}}"><img src="student/img/pic.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">@yield('student_name')</h5>
           <li class="">
             <a class="@yield('dashboard_select')" href="{{url('studentdeshboard')}}">
               <i class="fa fa-dashboard"></i>

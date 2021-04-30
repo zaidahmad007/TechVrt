@@ -14,6 +14,7 @@ class SubjectModelController extends Controller
      */
     public function subject()
     {
+    	//$result['data']=SubjectModel::all();
         return view('student.subject');
     }
 

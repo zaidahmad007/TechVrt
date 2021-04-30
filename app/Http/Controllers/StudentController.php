@@ -25,13 +25,10 @@ class StudentController extends Controller
         $stu=new StudentDetail();
         $stu->state=$req->state;
         $stu->city=$req->City;
-        $stu->district=$req->District;
         $stu->pincode=$req->pincode;
         $stu->collegecode=$req->collegecode;
         $stu->college=$req->college;
         $stu->rid=$user->rid;
-        $stu->mname=$req->mname;
-        $stu->fname=$req->fname;
         $stu->branch=$req->branch;
         $stu->board=$req->board;
         $stu->standard=$req->standard;

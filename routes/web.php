@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\SubjectModelController;
+use App\Http\Controllers\StudentProfileController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TimetableController;
 use App\Http\Controllers\AttendanceController;
@@ -27,16 +28,18 @@ Route::get('/', function () {
 Route::get('/registration',[LoginController::class,'Register']);
 Route::post('/register',[LoginController::class,'registerfoam']);
 Route::get('login',[LoginController::class,'login'])->name('login');
-Route::post('login',[LoginController::class,'logines']);
+Route::post('/login',[LoginController::class,'logines']);
 
 Route::middleware(['auth', 'detail','teacher'])->group(function () {
-    Route::get('/studentdeshboard',[StudentController::class,'studentdeshboard']);
+   /// Route::get('/studentdeshboard',[StudentController::class,'studentdeshboard']);
     Route::get('/teacherdeshboard',[TeacherController::class,'teacherdeshboard']);
 });
 Route::middleware(['auth', 'detail','student'])->group(function () {
     Route::get('/studentdeshboard',[StudentController::class,'studentdeshboard']);
     Route::get('/teacherdeshboard',[TeacherController::class,'teacherdeshboard']);
-    Route::get('/subject',[SubjectModelController::class,'subject']);
+    Route::get('/profile',[StudentProfileController::class,'profile']);
+    Route::get('/subject',[SubjectController::class,'subject']);
+
     Route::get('/timetable',[TimetableController::class,'timetable']);
     Route::get('/attendance',[AttendanceController::class,'attendance']);
 });

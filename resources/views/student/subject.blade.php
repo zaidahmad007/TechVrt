@@ -3,8 +3,8 @@
 @section('subject_select','active')
 @section('container')
 
-  <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Subjects</h3>
+<section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>Subject</h3>
         <div class="row mb">
           <!-- page start-->
           <div class="content-panel">
@@ -12,7 +12,7 @@
               <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr>
-                  	<th>S No.</th>
+                    <th>S No.</th>
                     <th>Subject Name</th>
                   
                     <th class="hidden-phone">Branch</th>
@@ -21,72 +21,17 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($users as $user)
+    
                   <tr class="gradeX">
-                  	<td>1</td>
-                    <td>Operating System</td>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->subject_name }}</td>
                     
-                    <td class="hidden-phone">CSE</td>
-                    <td class="center hidden-phone">4</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
+                    <td class="hidden-phone">{{ $user->branch }}</td>
+                    <td class="center hidden-phone">{{ $user->subject_code }}</td>
+                    <td class="center hidden-phone"><a href="student/{{$user->subject_notes}}" download=""> Download  </a>
                   </tr>
-                  <tr class="gradeC">
-                  	<td>2</td>
-                    <td>Trignometry</td>
-                   
-                    <td class="hidden-phone">CSE</td>
-                    <td class="center hidden-phone">5</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  <tr class="gradeA">
-                    <td>3</td>
-                    <td>Chemistry</td>
-                   
-                    <td class="hidden-phone">CSE</td>
-                    <td class="center hidden-phone">5.5</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  <tr class="gradeA">
-                  	<td>4</td>
-                    <td>DAA</td>
-                 
-                    <td class="hidden-phone">ME</td>
-                    <td class="center hidden-phone">6</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  
-                  <tr class="gradeC">
-                  	<td>5</td>
-                    <td>Economics</td>
-               
-                    <td class="hidden-phone">ME</td>
-                    <td class="center hidden-phone">1</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  
-                  <tr class="gradeX">
-                  	<td>6</td>
-                    <td>Maths</td>
-                 
-                    <td class="hidden-phone">BT</td>
-                    <td class="center hidden-phone">-</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  <tr class="gradeX">
-                  	<td>7</td>
-                    <td>Microprocessor</td>
-                    <td class="hidden-phone">BT</td>
-                    <td class="center hidden-phone">-</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                  <tr class="gradeC">
-                  	<td>8</td>
-                    <td>HV</td>
-                
-                    <td class="hidden-phone">CIVIL</td>
-                    <td class="center hidden-phone">-</td>
-                    <td class="center hidden-phone"><a href="">Download Here</a></td>
-                  </tr>
-                 
+                  @endforeach                
                 </tbody>
               </table>
             </div>
